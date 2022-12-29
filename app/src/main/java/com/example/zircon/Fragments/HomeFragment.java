@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +37,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;
-import java.util.Objects;
 
 import io.paperdb.Paper;
 import retrofit2.Call;
@@ -100,11 +98,14 @@ public class HomeFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-String email;
+
+    String email, user_id;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        email= requireActivity().getIntent().getStringExtra("email");
+        email = requireActivity().getIntent().getStringExtra("email");
+        user_id = requireActivity().getIntent().getStringExtra("user_id");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -124,20 +125,19 @@ String email;
         viewPager1.setAdapter(new FragmentThirdAdapter(getChildFragmentManager()));
         tabLayout.setupWithViewPager(viewPager1);
 
-        createroomBtn = (FloatingActionButton) view.findViewById(R.id.createroomBtn);
+        createroomBtn = view.findViewById(R.id.createroomBtn);
 
-        versesBtn = (FloatingActionButton) view.findViewById(R.id.versesBtn);
-        notificationIv = (ImageView) view.findViewById(R.id.bell_iv);
-        profileIc = (ImageView) view.findViewById(R.id.profileIc);
-        titleTV = (TextView) view.findViewById(R.id.titleTV);
+        versesBtn = view.findViewById(R.id.versesBtn);
+        notificationIv = view.findViewById(R.id.bell_iv);
+        profileIc = view.findViewById(R.id.profileIc);
+        titleTV = view.findViewById(R.id.titleTV);
 
 
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        roomRcv = (RecyclerView) view.findViewById(R.id.roomRcv);
+        roomRcv = view.findViewById(R.id.roomRcv);
 
 
-        String userId = getActivity().getIntent().getStringExtra("id");
-        Call<List<LoadMyRoomsModel>> myRoomCall = apiInterface.loadMyRooms("community", userId);
+        Call<List<LoadMyRoomsModel>> myRoomCall = apiInterface.loadMyRooms("community", user_id);
         myRoomCall.enqueue(new Callback<List<LoadMyRoomsModel>>() {
             @Override
             public void onResponse(Call<List<LoadMyRoomsModel>> call, Response<List<LoadMyRoomsModel>> response) {
@@ -148,25 +148,24 @@ String email;
 //                        Toast.makeText(My_Rooms.this, myRoom.getTitle(), Toast.LENGTH_SHORT).show();
                     }
                     adapter = new MyRoomsRecyclerviewAdapter(getActivity(), allRooms);
-                    adapter.setClickListener(new MyRoomsRecyclerviewAdapter.ItemClickListener() {
-                        @Override
-                        public void onItemClick(View view, int position) {
-                            Paper.init(getActivity());
-                            Paper.book().write(
-                                    "img",
-                                    String.valueOf(allRooms.get(position).getNarrator())
-                            );
-                            Toast.makeText(getActivity(), allRooms.get(position).getTitle(), Toast.LENGTH_SHORT).show();
-                            Intent personalIntent = new Intent(getActivity(), PersonalRoom.class);
-                            personalIntent.putExtra("title", allRooms.get(position).getTitle());
-//                            personalIntent.putExtra("id", "15");
-                            personalIntent.putExtra("start_date", allRooms.get(position).getStart_date());
+                    adapter.setClickListener((view1, position) -> {
+                        Paper.init(getActivity());
+                        Paper.book().write(
+                                "img",
+                                String.valueOf(allRooms.get(position).getNarrator())
+                        );
 
-                            personalIntent.putExtra("zikr_counting", allRooms.get(position).getZikr_counting());
-                            personalIntent.putExtra("status",allRooms.get(position).getStatus());
+                        Toast.makeText(getActivity(), allRooms.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+                        Intent personalIntent = new Intent(getActivity(), PersonalRoom.class);
+                        personalIntent.putExtra("title", allRooms.get(position).getTitle());
+                        personalIntent.putExtra("id", "15");
+                        personalIntent.putExtra("start_date", allRooms.get(position).getStart_date());
 
-                            startActivity(personalIntent);
-                        }
+                        personalIntent.putExtra("zikr_counting", allRooms.get(position).getZikr_counting());
+                        personalIntent.putExtra("status", allRooms.get(position).getStatus());
+                        personalIntent.putExtra("user_id", user_id);
+
+                        startActivity(personalIntent);
                     });
                     roomRcv.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, true));
                     roomRcv.setAdapter(adapter);
@@ -198,6 +197,7 @@ String email;
             public void onClick(View view) {
 
                 Intent intent = new Intent(getActivity(), NotificationActivity.class);
+                intent.putExtra("user_id", user_id);
                 startActivity(intent);
 
             }
@@ -207,13 +207,14 @@ String email;
             @Override
             public void onClick(View view) {
                 Intent intentprofile = new Intent(getActivity(), Profile.class);
-                intentprofile.putExtra("email",email);
+                intentprofile.putExtra("email", email);
+                intentprofile.putExtra("user_id", user_id);
                 startActivity(intentprofile);
             }
         });
 
 
-        myroomBtn = (FloatingActionButton) view.findViewById(R.id.myroomBtn);
+        myroomBtn = view.findViewById(R.id.myroomBtn);
 
         myroomBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -227,7 +228,7 @@ String email;
         });
 
 
-        cureBtn = (FloatingActionButton) view.findViewById(R.id.cureBtn);
+        cureBtn = view.findViewById(R.id.cureBtn);
         cureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -237,7 +238,7 @@ String email;
         });
 
 
-        inspirationBtn = (FloatingActionButton) view.findViewById(R.id.inspirationBtn);
+        inspirationBtn = view.findViewById(R.id.inspirationBtn);
         inspirationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -247,7 +248,7 @@ String email;
                 startActivity(inspirationBtnIntent);
             }
         });
-        versesBtn = (FloatingActionButton) view.findViewById(R.id.versesBtn);
+        versesBtn = view.findViewById(R.id.versesBtn);
         versesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -256,7 +257,7 @@ String email;
             }
         });
 
-        personalTrackerBtn = (FloatingActionButton) view.findViewById(R.id.personalTrackerBtn);
+        personalTrackerBtn = view.findViewById(R.id.personalTrackerBtn);
         personalTrackerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -293,6 +294,5 @@ String email;
         super.onResume();
         checkBool();
     }
-
 
 }

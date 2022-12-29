@@ -1,16 +1,6 @@
 package com.example.zircon.api;
 
-import com.example.zircon.api.models.DiseasesModel;
-import com.example.zircon.api.models.HomeInProgressModel;
-import com.example.zircon.api.models.InspirationModel;
-import com.example.zircon.api.models.LoadHomeTodayInProgressModel;
-import com.example.zircon.api.models.LoadMyRoomsModel;
-import com.example.zircon.api.models.ProfileModel;
-import com.example.zircon.api.models.RoomModel;
-import com.example.zircon.api.models.UpdateChangesModel;
-import com.example.zircon.api.models.User;
-import com.example.zircon.api.models.VersesModel;
-import com.example.zircon.api.models.ZikrModel;
+import com.example.zircon.api.models.*;
 
 import java.util.List;
 
@@ -79,11 +69,15 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("Anza/get_profile.php")
-    Call<List<ProfileModel>> getName(@Field("email") String email);
+    Call<List<ProfileModel>> getUserDetails(@Field("email") String email);
 
 
     @FormUrlEncoded
     @POST("Anza/update_profile.php")
-    Call<List<UpdateChangesModel>> updateChanges(@Field("email") String email, @Field("name")String name);
-
+    Call<List<UpdateChangesModel>> updateChanges(@Field("email") String email, @Field("name")String name,@Field("password") String password);
+    @FormUrlEncoded
+    @POST("Anza/save_user_room.php")
+    Call<List<Object>> addUserRoomRecord(@Field("room_id") int roomId, @Field("user_id") String userid);
+    @GET("Anza/get_user_room.php")
+    Call<List<UserRoomModel>> getUserRoomRecord();
 }

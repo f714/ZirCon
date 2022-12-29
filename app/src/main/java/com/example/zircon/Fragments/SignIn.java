@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.text.TextUtils;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -104,7 +106,6 @@ public class SignIn extends Fragment {
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity().getApplicationContext(), "jamshaid", Toast.LENGTH_SHORT).show();
                 ;
                 Call<List<User>> signInCall = apiInterface.loginUser(
 
@@ -113,17 +114,19 @@ public class SignIn extends Fragment {
                 signInCall.enqueue(new Callback<List<User>>() {
                     @Override
                     public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                        if (response.isSuccessful()) {
+                        List<User> userdetails = response.body();
+                        assert userdetails != null;
+                        if (!TextUtils.isEmpty(userdetails.get(0).getName())) {
 
-                            List<User> userdetails = response.body();
-                            Toast.makeText(getActivity(), "" + userdetails.get(0).getName(), Toast.LENGTH_SHORT).show();
                             Intent loginintent = new Intent(getActivity(), Home.class);
-
                             loginintent.putExtra("username", userdetails.get(0).getName());
                             loginintent.putExtra("email", userdetails.get(0).getEmail());
-                            loginintent.putExtra("id", userdetails.get(0).getId());
+                            loginintent.putExtra("user_id", userdetails.get(0).getId());
+
                             startActivity(loginintent);
-                        }
+                        } else
+                            Toast.makeText(getActivity().getApplicationContext(), "Invalid Login Details...", Toast.LENGTH_SHORT).show();
+
                     }
 
                     @Override

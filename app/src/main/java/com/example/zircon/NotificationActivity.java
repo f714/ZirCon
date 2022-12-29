@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.zircon.api.ApiClient;
+import com.example.zircon.api.ApiInterface;
 import com.example.zircon.rcvadapters.NotificationAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,6 +23,8 @@ import java.util.ArrayList;
 public class NotificationActivity extends BaseActivity {
 
     NotificationModel notificationModel;
+    ApiInterface apiInterface;
+
     ArrayList<NotificationModel> array = new ArrayList<>();
     RecyclerView rv;
     SharedPreferences.Editor editor;
@@ -29,6 +33,7 @@ public class NotificationActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
+        String user_id= getIntent().getStringExtra("user_id");
 
         rv = (RecyclerView) findViewById(R.id.noti_rv);
 
@@ -50,7 +55,7 @@ public class NotificationActivity extends BaseActivity {
                     }
 
                     rv.setLayoutManager(new LinearLayoutManager(NotificationActivity.this,LinearLayoutManager.VERTICAL,true));
-                    NotificationAdapter adapter = new NotificationAdapter(NotificationActivity.this, array);
+                    NotificationAdapter adapter = new NotificationAdapter(NotificationActivity.this, array,user_id,apiInterface);
                     rv.setAdapter(adapter);
 //                    for (DataSnapshot datas : dataSnapshot) {
 //                        notificationModel = datas.getValue(NotificationModel.class);

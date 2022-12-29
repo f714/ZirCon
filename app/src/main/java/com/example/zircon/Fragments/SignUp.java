@@ -85,37 +85,34 @@ public class SignUp extends Fragment {
                              Bundle savedInstanceState) {
 
 
-
         View view = inflater.inflate(R.layout.fragment_sign_up, container, false);
 
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
 
-        nameTIL = (TextInputLayout)view.findViewById(R.id.userName);
-        emailTIL = (TextInputLayout)view.findViewById(R.id.email);
-        passwordTIL = (TextInputLayout)view.findViewById(R.id.password);
-        confirmPasswordTIL = (TextInputLayout) view.findViewById(R.id.confirmPassword);
-        errorTv = (TextView)view.findViewById(R.id.errorTv);
+        nameTIL = view.findViewById(R.id.userName);
+        emailTIL = view.findViewById(R.id.email);
+        passwordTIL = view.findViewById(R.id.password);
+        confirmPasswordTIL = view.findViewById(R.id.confirmPassword);
+        errorTv = view.findViewById(R.id.errorTv);
 
-        signupBtn = (Button) view.findViewById(R.id.signupBtn);
-
-
+        signupBtn = view.findViewById(R.id.signupBtn);
 
 
-            signupBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.d("Testing Signup", "ok");
+        signupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Testing Signup", "ok");
 
-                    String p1 = passwordTIL.getEditText().getText().toString();
-                    String p2 = confirmPasswordTIL.getEditText().getText().toString();
+                String p1 = passwordTIL.getEditText().getText().toString();
+                String p2 = confirmPasswordTIL.getEditText().getText().toString();
 
 //                    errorTv.setText(p1 + "\n"+ p2);
-                    if(TextUtils.equals(p1,p2)) {
+                if (TextUtils.equals(p1, p2)) {
                     //Replace hard coded values with text field values
-                        Call<List<User>> signupCall = apiInterface.signupUser(
-                                nameTIL.getEditText().getText().toString(),
-                                emailTIL.getEditText().getText().toString(),
-                                passwordTIL.getEditText().getText().toString());
+                    Call<List<User>> signupCall = apiInterface.signupUser(
+                            nameTIL.getEditText().getText().toString(),
+                            emailTIL.getEditText().getText().toString(),
+                            passwordTIL.getEditText().getText().toString());
                     signupCall.enqueue(new Callback<List<User>>() {
                         @Override
                         public void onResponse(Call<List<User>> call, Response<List<User>> response) {
@@ -123,19 +120,18 @@ public class SignUp extends Fragment {
                                 List<User> usr = response.body();
                                 if (usr.size() > 0) {
                                     for (User us : usr) {
-                                        Log.d("Response Successfull", us.getEmail());
+                                        Log.d("Response Successful", us.getEmail());
 
-                                        Intent loginintent=new Intent(getActivity(), Home.class);
+                                        Intent loginintent = new Intent(getActivity(), Home.class);
 
-                                        loginintent.putExtra("username",us.getName());
-                                        loginintent.putExtra("email",us.getEmail());
-                                        loginintent.putExtra("id",us.getId());
+                                        loginintent.putExtra("username", us.getName());
+                                        loginintent.putExtra("email", us.getEmail());
+                                        loginintent.putExtra("id", us.getId());
                                         startActivity(loginintent);
                                     }
                                 } else {
                                     errorTv.setText("Unable to Signup");
                                 }
-
 
                             } else {
                                 Log.d("Response Failed", "");
@@ -150,11 +146,11 @@ public class SignUp extends Fragment {
                         }
                     });
 
-                    } else {
-                        errorTv.setText("Confirm Password Doesn't Match");
-                    }
+                } else {
+                    errorTv.setText("Confirm Password Doesn't Match");
                 }
-            });
+            }
+        });
         // Inflate the layout for this fragment
         return view;
     }

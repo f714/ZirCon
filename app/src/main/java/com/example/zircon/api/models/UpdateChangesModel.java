@@ -5,27 +5,14 @@ import com.google.gson.annotations.SerializedName;
 public class UpdateChangesModel {
 
 
-    @SerializedName("name")
-    String name;
+    @SerializedName("update_status")
+    String update_status;
 
-    @SerializedName("email")
-    String email;
-
-
-    public String getName() {
-        return name;
+    public String getUpdate_status() {
+        return update_status;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUpdate_status(String update_status) {
+        this.update_status = update_status;
     }
 }

@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+#card{
+	width:320px; height:195px; border:2px solid #000; padding:7px; display:none;
+}
+#card table{
+	width:100%; font-family: Arial, Helvetica, sans-serif; font-size: 12px; text-align: justify;
+}
+.card_heading{
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	text-decoration:underline;
+}
+.card_left{
+	text-align: left; font-weight: bold;
+}
+.card_info{
+	text-align: left; padding-left:20px !important
+}
+.card_bottom span{
+ margin-left:70px; text-decoration:underline; background:#000; font-size:13px; font-weight:bold; color:#FFF; padding:2px 10px; 
+}
+#card table tr td{
+	padding:2px 0;
+}
+#my_camera{
+	height:240px;max-height:240px; vertical-align:top;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+     background-color: #FFFFFF !important; 
+}
+.custom-tabs li{
+	width:25%;
+	min-width:150px;
+	text-align:center;
+}
+/*.custom-tabs li:hover {
+	border-bottom:2px solid #26B0AA;
+	
+}*/
+.custom-tabs .active a{
+	color:#8BB51A !important;
+	font-weight:bolder;
+	border-top: 3px solid #8BB51A !important;
+}
+
+.report-table th {
+     text-align: center !important;
+	 vertical-align:middle !important; 
+}
+
+.cart-totals {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #f5f5f5;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    padding:10px;
+}
+.cart-totals h5{
+margin:5px 0;
+font-weight:bold;
+font-size:15px;
+}
+.right{
+float:right;
+}

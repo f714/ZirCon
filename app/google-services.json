@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "65855760034",
+    "firebase_url": "https://zircon-7fb62-default-rtdb.firebaseio.com",
+    "project_id": "zircon-7fb62",
+    "storage_bucket": "zircon-7fb62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65855760034:android:6cda541ea701bae26819fb",
+        "android_client_info": {
+          "package_name": "com.example.zircon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65855760034-jhurdfqv4j7gihqj6gi2eh11ig05edfs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRMDq3F5WgD9AkgawhFAjXsnmKVjaJAOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65855760034-jhurdfqv4j7gihqj6gi2eh11ig05edfs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,23 @@
+[19-Jan-2021 06:17:33 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:17:53 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:17:56 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:20:35 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:21:19 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:21:26 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:21:32 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:21:41 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:22:03 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:22:16 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:22:21 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:22:25 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/events.php on line 193
+[19-Jan-2021 06:22:27 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:22:31 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:23:39 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[19-Jan-2021 06:23:58 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rganixla/public_html/ims/admin/categories.php on line 184
+[22-Jan-2021 13:47:44 UTC] PHP Notice:  Undefined index: purchase_date in /home/rganixla/public_html/ims/admin/add_stock2.php on line 13
+[22-Jan-2021 13:49:24 UTC] PHP Notice:  Undefined index: purchase_date in /home/rganixla/public_html/ims/admin/add_stock2.php on line 13
+[07-Feb-2021 08:48:40 UTC] PHP Notice:  Undefined index: login_name in /home/rganixla/public_html/ims/admin/header.php on line 412
+[07-Feb-2021 08:48:40 UTC] PHP Notice:  Undefined index: login_role in /home/rganixla/public_html/ims/admin/left_sidebar.php on line 33
+[07-Feb-2021 08:48:40 UTC] PHP Notice:  Undefined index: login_role in /home/rganixla/public_html/ims/admin/left_sidebar.php on line 33
+[07-Feb-2021 08:48:40 UTC] PHP Notice:  Undefined index: login_role in /home/rganixla/public_html/ims/admin/welcome.php on line 74
+[07-Feb-2021 08:48:40 UTC] PHP Notice:  Undefined index: login_role in /home/rganixla/public_html/ims/admin/welcome.php on line 74

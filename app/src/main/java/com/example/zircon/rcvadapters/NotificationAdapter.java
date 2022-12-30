@@ -1,6 +1,7 @@
 package com.example.zircon.rcvadapters;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -58,7 +59,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
     // binds the data to the TextView in each cell
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         String data = "Your room is created with title '" + mData.get(position).getTitle() + "' and it's type is '" + mData.get(position).getType() + "'.";
         holder.itemTitle.setText(data);
 
@@ -144,7 +145,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
                                 personalIntent.putExtra("status", allRooms.get(0).getStatus());
                                 personalIntent.putExtra("zikr_counting", allRooms.get(0).getZikr_counting());
                                 personalIntent.putExtra("usersList", joinedUsersList);
-
+                                personalIntent.putExtra("user_id",user_id);
                                 mContext.startActivity(personalIntent);
 
                             }

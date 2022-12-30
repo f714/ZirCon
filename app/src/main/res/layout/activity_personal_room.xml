@@ -279,6 +279,7 @@
                             android:progress="40"
                             android:indeterminate="false"
                             android:max="100"
+                        android:id="@+id/progressBrD2"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:progressDrawable="@drawable/progress_circle"/>
 
@@ -304,6 +305,7 @@
                             android:progress="40"
                             android:indeterminate="false"
                             android:max="100"
+                        android:id="@+id/progressBrD3"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:progressDrawable="@drawable/progress_circle" />
 
@@ -329,6 +331,8 @@
                             android:progress="40"
                             android:indeterminate="false"
                             android:max="100"
+
+                        android:id="@+id/progressBrD4"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:progressDrawable="@drawable/progress_circle"  />
 
@@ -354,6 +358,8 @@
                             android:progress="40"
                             android:indeterminate="false"
                             android:max="100"
+
+                        android:id="@+id/progressBrD5"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:progressDrawable="@drawable/progress_circle"  />
 
@@ -379,6 +385,7 @@
                             android:progress="40"
                             android:indeterminate="false"
                             android:max="100"
+                        android:id="@+id/progressBrD6"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:progressDrawable="@drawable/progress_circle"  />
 
@@ -404,6 +411,8 @@
                             android:progress="40"
                             android:indeterminate="false"
                             android:max="100"
+
+                        android:id="@+id/progressBrD7"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:progressDrawable="@drawable/progress_circle"  />
 
@@ -445,8 +454,16 @@
                         android:paddingHorizontal="2dp">
 
                     <ProgressBar
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                        android:progress="40"
+                        android:indeterminate="false"
+                        android:max="100"
+
+                        android:id="@+id/progessBrW1"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progressDrawable="@drawable/progress_circle"
+                        />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -464,8 +481,16 @@
                         android:paddingHorizontal="2dp">
 
                     <ProgressBar
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                        android:progress="40"
+                        android:indeterminate="false"
+                        android:max="100"
+
+                        android:id="@+id/progessBrW2"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progressDrawable="@drawable/progress_circle"
+                        />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -484,8 +509,16 @@
                         android:paddingHorizontal="2dp">
 
                     <ProgressBar
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                        android:progress="40"
+                        android:indeterminate="false"
+                        android:max="100"
+
+                        android:id="@+id/progessBrW3"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progressDrawable="@drawable/progress_circle"
+                        />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -503,8 +536,16 @@
                         android:paddingHorizontal="2dp">
 
                     <ProgressBar
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                        android:progress="40"
+                        android:indeterminate="false"
+                        android:max="100"
+
+                        android:id="@+id/progessBrW4"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progressDrawable="@drawable/progress_circle"
+                        />
 
                     <TextView
                             android:layout_width="wrap_content"

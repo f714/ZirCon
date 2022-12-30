@@ -105,7 +105,7 @@ public class HomeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         email = requireActivity().getIntent().getStringExtra("email");
-        user_id = requireActivity().getIntent().getStringExtra("user_id");
+        user_id = requireActivity().getIntent().getStringExtra("id");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);

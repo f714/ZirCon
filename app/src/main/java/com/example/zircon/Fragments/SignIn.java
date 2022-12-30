@@ -121,7 +121,7 @@ public class SignIn extends Fragment {
                             Intent loginintent = new Intent(getActivity(), Home.class);
                             loginintent.putExtra("username", userdetails.get(0).getName());
                             loginintent.putExtra("email", userdetails.get(0).getEmail());
-                            loginintent.putExtra("user_id", userdetails.get(0).getId());
+                            loginintent.putExtra("id", userdetails.get(0).getId());
 
                             startActivity(loginintent);
                         } else

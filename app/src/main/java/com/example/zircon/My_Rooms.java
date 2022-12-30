@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -82,6 +83,8 @@ public class My_Rooms extends AppCompatActivity implements MyRoomsRecyclerviewAd
             @Override
             public void onFailure(Call<List<LoadMyRoomsModel>> call, Throwable t) {
                 Toast.makeText(My_Rooms.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("errRooms", call.request().toString());
+                t.printStackTrace();
             }
         });
 

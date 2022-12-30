@@ -81,6 +81,16 @@ public class Portfolio extends AppCompatActivity {
             }
         });
 
+
+        StorageReference ref
+                = storageReference
+                .child(
+                        "images/");
+        ref.child(user_id).getDownloadUrl().addOnSuccessListener(uri -> Glide.with(Portfolio.this)
+                .load(uri)
+                .into(circleImageView));
+
+
     }
 
     int SELECT_PICTURE = 200;

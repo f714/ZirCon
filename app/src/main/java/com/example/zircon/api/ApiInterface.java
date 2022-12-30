@@ -56,6 +56,9 @@ public interface ApiInterface {
     Call<RoomModel> createRoom(@Field("title") String title, @Field("description") String description,@Field("start_time") String start_time,@Field("end_time") String end_time,@Field("type") String type,@Field("number_of_participants") String number_of_participants,@Field("duration") String duration,@Field("start_date") String start_date,@Field("end_date") String end_date,@Field("status") String status,@Field("recitation_target") String recitation_target,@Field("id") String id);
 
 
+    @FormUrlEncoded
+    @POST("Anza/add_recurrence.php")
+    Call<RecurrenceModel> recurrence(@Field("room_id") String room_id,@Field("zikr_count") String zikr_count,@Field("complete_count") String complete_count,@Field("recurrence_day") String recurrence_day,@Field("recurrence_date") String recurrence_date);
 
     @GET("Anza/get_Inspirations.php")
     Call<List<InspirationModel>> getInspirations();

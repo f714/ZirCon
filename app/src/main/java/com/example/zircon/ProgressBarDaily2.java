@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class ProgressBarDaily2 extends AppCompatActivity {
-
+//
 
     TextView dayNameTV, dateTV,statusTV;
 

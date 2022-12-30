@@ -8,33 +8,28 @@
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:weightSum="2"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@drawable/roombackground"
             android:orientation="vertical"
             android:paddingHorizontal="10dp"
             tools:context=".PersonalRoom">
-        <LinearLayout
-                android:layout_weight="0.4"
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profile_img_recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="0dp">
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/profile_img_recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                android:layout_height="80dp">
 
-            </androidx.recyclerview.widget.RecyclerView>
-        </LinearLayout>
+        </androidx.recyclerview.widget.RecyclerView>
+
         <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="510dp"
                 android:layout_marginTop="10dp"
-                android:layout_weight="1.6"
                 app:cardCornerRadius="10dp">
+
 
             <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="437dp"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                 <TextView
@@ -42,12 +37,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-
                         android:text="Darood-e-Tanjeena:"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:textSize="30sp"
 
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                 <TextView
                         android:id="@+id/zikr_countTV"
@@ -58,7 +52,7 @@
                         android:textColor="@color/black"
 
                         android:textSize="50sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                 <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
@@ -69,7 +63,7 @@
                             android:text="Zikr Target"
                             android:textColor="@color/black"
                             android:textSize="17sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -80,7 +74,7 @@
                             android:layout_centerInParent="true"
                             android:id="@+id/statusTv"
                             android:textSize="17sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
                 </RelativeLayout>
 
                 <LinearLayout
@@ -98,7 +92,7 @@
                             android:layout_gravity="center_horizontal"
                             android:indeterminate="false"
                             android:max="100"
-                            android:progress="10"/>
+                            android:progress="10" />
 
                     <TextView
                             android:id="@+id/cProgress"
@@ -109,7 +103,7 @@
                             android:text="0%"
                             android:textColor="@color/black"
                             android:textSize="18sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
                 </LinearLayout>
 
                 <RelativeLayout
@@ -124,7 +118,7 @@
                             android:text="Completed"
                             android:textColor="@color/black"
                             android:textSize="17sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -135,7 +129,7 @@
                             android:text="Pending"
                             android:textColor="@color/black"
                             android:textSize="17sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
 
                 </RelativeLayout>
@@ -153,7 +147,7 @@
                             android:text="0%"
                             android:textColor="@color/black"
                             android:textSize="17sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                     <TextView
                             android:id="@+id/pendingTv"
@@ -165,7 +159,7 @@
                             android:text="0%"
                             android:textColor="@color/black"
                             android:textSize="17sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
 
                 </RelativeLayout>
@@ -175,7 +169,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/ic_add_image"/>
+                        android:src="@drawable/ic_add_image" />
 
                 <TextView
                         android:id="@+id/startdateET"
@@ -189,7 +183,7 @@
                         android:text="Start Date"
                         android:textColor="@color/black"
                         android:textSize="17sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -213,7 +207,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:background="@color/purple_500"
-                        android:text="Counter"/>
+                        android:text="Counter" />
 
                 <TextView
                         android:id="@+id/tx"
@@ -223,7 +217,7 @@
                         android:layout_marginStart="15sp"
                         android:text="0"
                         android:textAppearance="?android:textAppearanceLarge"
-                        android:textSize="50sp"/>
+                        android:textSize="50sp" />
 
 
             </LinearLayout>
@@ -243,6 +237,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginHorizontal="5dp">
+
 
 
                 <LinearLayout
@@ -268,7 +263,7 @@
                             android:layout_gravity="center"
                             android:text="M"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -293,7 +288,7 @@
                             android:layout_gravity="center"
                             android:text="T"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -310,7 +305,7 @@
                             android:indeterminate="false"
                             android:max="100"
                             style="?android:attr/progressBarStyleHorizontal"
-                            android:progressDrawable="@drawable/progress_circle"/>
+                            android:progressDrawable="@drawable/progress_circle" />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -318,7 +313,7 @@
                             android:layout_gravity="center"
                             android:text="W"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -335,7 +330,7 @@
                             android:indeterminate="false"
                             android:max="100"
                             style="?android:attr/progressBarStyleHorizontal"
-                            android:progressDrawable="@drawable/progress_circle"/>
+                            android:progressDrawable="@drawable/progress_circle"  />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -343,7 +338,7 @@
                             android:layout_gravity="center"
                             android:text="T"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -360,7 +355,7 @@
                             android:indeterminate="false"
                             android:max="100"
                             style="?android:attr/progressBarStyleHorizontal"
-                            android:progressDrawable="@drawable/progress_circle"/>
+                            android:progressDrawable="@drawable/progress_circle"  />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -368,7 +363,7 @@
                             android:layout_gravity="center"
                             android:text="R"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -385,7 +380,7 @@
                             android:indeterminate="false"
                             android:max="100"
                             style="?android:attr/progressBarStyleHorizontal"
-                            android:progressDrawable="@drawable/progress_circle"/>
+                            android:progressDrawable="@drawable/progress_circle"  />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -393,7 +388,7 @@
                             android:layout_gravity="center"
                             android:text="S"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -410,7 +405,7 @@
                             android:indeterminate="false"
                             android:max="100"
                             style="?android:attr/progressBarStyleHorizontal"
-                            android:progressDrawable="@drawable/progress_circle"/>
+                            android:progressDrawable="@drawable/progress_circle"  />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -418,7 +413,7 @@
                             android:layout_gravity="center"
                             android:text="S"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -436,6 +431,7 @@
                 app:cardCornerRadius="10dp">
 
 
+
             <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -450,7 +446,7 @@
 
                     <ProgressBar
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -458,7 +454,7 @@
                             android:layout_gravity="center"
                             android:text="W1"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -469,7 +465,7 @@
 
                     <ProgressBar
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -477,7 +473,7 @@
                             android:layout_gravity="center"
                             android:text="W2"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -489,7 +485,7 @@
 
                     <ProgressBar
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -497,7 +493,7 @@
                             android:layout_gravity="center"
                             android:text="W3"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -508,7 +504,7 @@
 
                     <ProgressBar
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -516,12 +512,13 @@
                             android:layout_gravity="center"
                             android:text="W4"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
 
             </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 
         </androidx.cardview.widget.CardView>
@@ -549,7 +546,7 @@
 
                     <ProgressBar
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -557,7 +554,7 @@
                             android:layout_gravity="center"
                             android:text="jan"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -569,7 +566,7 @@
 
                     <ProgressBar
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -577,7 +574,7 @@
                             android:layout_gravity="center"
                             android:text="Feb"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -589,7 +586,7 @@
 
                     <ProgressBar
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -597,7 +594,7 @@
                             android:layout_gravity="center"
                             android:text="Mar"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -609,7 +606,7 @@
 
                     <ProgressBar
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -617,7 +614,7 @@
                             android:layout_gravity="center"
                             android:text="Apr"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -629,7 +626,7 @@
 
                     <ProgressBar
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -637,7 +634,7 @@
                             android:layout_gravity="center"
                             android:text="May"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -649,7 +646,7 @@
 
                     <ProgressBar
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -657,7 +654,7 @@
                             android:layout_gravity="center"
                             android:text="Jun"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -674,7 +671,7 @@
                             android:indeterminate="false"
                             android:max="100"
                             style="?android:attr/progressBarStyleHorizontal"
-                            android:progressDrawable="@drawable/progress_circle"/>
+                            android:progressDrawable="@drawable/progress_circle"  />
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -682,13 +679,15 @@
                             android:layout_gravity="center"
                             android:text="July"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
 
+
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.cardview.widget.CardView>
+
 
 
         <!--    <Spinner-->

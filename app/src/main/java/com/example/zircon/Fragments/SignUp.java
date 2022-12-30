@@ -126,7 +126,7 @@ public class SignUp extends Fragment {
 
                                         loginintent.putExtra("username", us.getName());
                                         loginintent.putExtra("email", us.getEmail());
-                                        loginintent.putExtra("id", us.getId());
+                                        loginintent.putExtra("user_id", us.getId());
                                         startActivity(loginintent);
                                     }
                                 } else {
